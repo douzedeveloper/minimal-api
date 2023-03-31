@@ -2,7 +2,6 @@ import { getConnection } from "./../database/database";
 
 const getProducts = async (req, res) => {
     try {
-        res.send("List of Products");
         const connection = await getConnection();
         const result = await connection.query("SELECT id, title, description, image, price FROM product");
         res.json(result);
